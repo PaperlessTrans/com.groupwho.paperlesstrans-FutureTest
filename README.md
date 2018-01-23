@@ -40,9 +40,8 @@ Once the extension is installed, you need to add the payment processor(s) and in
 
 6. Create a Contribution Page (or go to an existing one) -> Under Configure -> Contribution Amounts -> select your newly installed/configured Payment Processor(s), and Save.
 
-7. (Important Verification)
-Find the Main.extra.tpl file in the extension at 
-'com.groupwho.paperlesstrans/templates/CRM/Contribute/Form/Contribution' and search for "residence". Change(replace) the string value associated with the "residence" keyword with respect to your CMS location. Eg: 'sites/default/files/civicrm/ext/com.groupwho.paperlesstrans/templates/CRM/Contribute/Form/Contribution/'
+7. (Very Important Verification)
+Please make sure that you have downloaded the extension under the "../civicrm/ext" directory inside the server root so as to ensure secure transaction to be enabled. Otherwise, a TypeError will be shown in the browser's console and the extension cannot take transactions starting from a future date.
 
 Extension Testing Notes
 -----------------------
