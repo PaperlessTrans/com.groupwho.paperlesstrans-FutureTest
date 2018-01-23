@@ -66,15 +66,15 @@ Once you're happy all is well - then all you need to do is update the Payment Pr
 
 Also remember to turn off debugging/logging on any production environment!
 
-Issues
-------
+Issues & Limitations 
+--------------------
 
 Some issues may be related to core CiviCRM issues, and may not have an immediate solution, but we'll endeavour to help you understand, work-around, and/or fix whatever concerns you raise on the issue queue.
 
-Below is a list of some of the most common issues:
+Limitations of using future date feature:
 
-* The Credit Card and ACH/EFT haven't been implemented together to run future date transactions yet.
-* Since the future date payment feature is new, it is under process of development of a live environment.
+* The Paperless Transactions' Payment Processor cannot be used along with other Payment Processors on a Contribution Page for "future transactions" specifically.
+* CiviCRM is limited to add 2 or less Paperless Transactions' Payment Processors (Credit Card and ACH/EFT only) for better results for "future transactions" .
 
 Please post an issue to the github repository if you have any questions.
 
