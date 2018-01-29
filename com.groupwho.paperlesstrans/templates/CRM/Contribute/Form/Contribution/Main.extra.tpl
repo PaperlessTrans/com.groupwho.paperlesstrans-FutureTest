@@ -2,8 +2,6 @@
     {php}
     $dir = dirname(__FILE__);
     echo $dir;
-    echo "\n";
-    echo $_SERVER['DOCUMENT_ROOT'];
     {/php}
 </div>
 {literal}
@@ -15,8 +13,11 @@ var one_time_future_contribution = '<br/><legend>One-Time Contribution</legend><
 var one_time_date_picker = '<div id="one_time_date_picker_div" style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="one_time_date_picker">Select Your Future Date: </label><input id="one_time_date_picker" class="eight crm-form-text" type="date" /><br/><div>';
 var record_future_transaction = '<input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Contribution" id="future_transaction" type="button"><input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Recurring Contribution" id="future_recur_transaction" type="button">';
 var recur_future_contribution_header = '<legend>Recurring Contribution</legend>';
-var custom_fields = '<br/><legend>Additional Information</legend><br/><div id="organization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="organization_picker" name="organization_picker" class="crm-form-checkbox" type="checkbox"/> <label for="organization_picker">I Want To Enter The Contribution On Behalf Of An Organization.</label><br/><br/><div id="organization_view" style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="enter_organization">Name Of The Organization: </label><input size="30" id="enter_organization" class="big crm-form-text" type="text"></div></div><br/><div id="honor_donation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="name_picker" name="name_picker" class="crm-form-checkbox" type="checkbox"/> <label for="name_picker"><label>I Am Donating In Honor Of Or In Memory Of A Loved One.</label><br/><br/><div id="honor_donation_view" style="display: none;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="honor_id">Name Of The Person: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input size="30" id="honor_id" class="big crm-form-text" type="text"></div></div>';
+var custom_fields = '<br/><legend>Additional Information</legend><br/><div id="organization">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="organization_picker" name="organization_picker" class="crm-form-checkbox" type="checkbox"/> <label for="organization_picker">I Want To Enter The Contribution On Behalf Of An Organization.</label><br/><br/><div id="organization_view" style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="enter_organization">Name Of The Organization: </label><input size="30" id="enter_organization" class="big crm-form-text" type="text"></div></div><br/><div id="honor_donation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="name_picker" name="name_picker" class="crm-form-checkbox" type="checkbox"/> <label for="name_picker"><label>I Am Donating In Honor Of Or In Memory Of A Loved One.</label><br/><br/><div id="honor_donation_view" style="display: none;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="honor_id">Name Of The Person: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input size="30" id="honor_id" class="big crm-form-text" type="text"></div></div><br/><div id="Update">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="updation" name="updation" class="crm-form-checkbox" type="checkbox"/> <label for="updation"><label>I Want To Update My Payment Information.</label><br/><br/><div id="changes" style="display:none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="credit_change" class="crm-form-radio" name="changes" type="radio"/><label for="credit_change"><label>Enter Credit Card Information.</label><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="debit_change" class="crm-form-radio" name="changes" type="radio"/><label for="debit_change"><label>Enter ACH/EFT Information.</label><br/></div></div>';
 var paperless_logo = '<img src="http://www.paperlesstrans.com/wp-content/themes/paperless/images/logo.jpg" alt="Paperless Transaction Corporation Logo" align="middle">';
+var debit_info = '<div id="debit_block" style="display:none;"><div class="crm-section account_holder-section"><div class="label"><label for="account_holder1">Account Holder</label><span class="crm-marker" title="This field is required.">*</span>            </div><div class="content"><input size="20" maxlength="34" autocomplete="on" name="account_holder1" id="account_holder1" class="medium crm-form-text" type="text"></div><div class="clear"></div></div><div class="crm-section bank_account_number-section"><div class="label"><label for="bank_account_number1">Bank Account Number</label><span class="crm-marker" title="This field is required.">*</span>            </div><div class="content"><input size="20" maxlength="34" autocomplete="off" name="bank_account_number1" id="bank_account_number1" class="medium crm-form-text" type="text"></div><div class="clear"></div></div><div class="crm-section bank_identification_number-section"><div class="label"><label for="bank_identification_number1">Bank Identification Number</label><span class="crm-marker" title="This field is required.">*</span>            </div><div class="content"><input size="20" maxlength="11" autocomplete="off" name="bank_identification_number1" id="bank_identification_number1" class="medium crm-form-text" type="text"></div><div class="clear"></div></div><div class="crm-section bank_name-section"><div class="label"><label for="bank_name1">Bank Name</label><span class="crm-marker" title="This field is required.">*</span>            </div><div class="content"><input size="20" maxlength="64" autocomplete="off" name="bank_name1" id="bank_name1" class="medium crm-form-text" type="text"></div></div><br/><button crm-icon="fa-check" type="button" id="ach_update">Update ACH/EFT Information</button></div>';
+var credit_info = '<div id ="credit_block" style="display:none;"><div class="crm-section credit_card_number-section"><div class="label"><label for="credit_card_number1">Card Number</label><span class="crm-marker" title="This field is required.">*</span>   </div><div class="content"><input size="20" maxlength="20" autocomplete="off" class="creditcard crm-form-text" name="credit_card_number1" id="credit_card_number1" type="text">   </div><div class="clear"></div></div><div class="crm-section cvv2-section">            <div class="label"><label for="cvv21">Security Code</label><span class="crm-marker" title="This field is required.">*</span>            </div><div class="content"><input size="5" maxlength="10" autocomplete="off" name="cvv21" id="cvv21" class="crm-form-text" type="text"><span class="cvv2-icon" title="Usually the last 3-4 digits in the signature area on the back of the card."> </span></div><div class="clear"></div></div>                            <div class="crm-section credit_card_exp_date-section"><div class="label"><label>Expiration Date</label>              <span class="crm-marker" title="This field is required.">*</span>            </div> <div class="content"><select class="crm-form-date" id="credit_card_exp_date_M1" name="credit_card_exp_date[M]1">  <option value="">-month-</option> <option value="1">Jan</option> <option value="2">Feb</option> <option value="3">Mar</option> <option value="4">Apr</option> <option value="5">May</option> <option value="6">Jun</option>  <option value="7">Jul</option><option value="8">Aug</option>  <option value="9">Sep</option> <option value="10">Oct</option> <option value="11">Nov</option><option value="12">Dec</option></select>&nbsp;<select class="crm-form-date" id="credit_card_exp_date_Y1" name="credit_card_exp_date[Y]1"><option value="">-year-</option><option value="2018">2018</option> <option value="2019">2019</option><option value="2020">2020</option> <option value="2021">2021</option> <option value="2022">2022</option> <option value="2023">2023</option> <option value="2024">2024</option>  <option value="2025">2025</option> <option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option></select></div></div><br/> <button crm-icon="fa-check" type="button" id="cc_update">Update Credit Card Information</button> </div>';
+
 $(document).ready(function () 
 {
     $("#intro_text").before(paperless_logo);
@@ -27,6 +28,8 @@ $(document).ready(function ()
     $(".is_recur-section").before(recur_future_contribution_header);
     $("#crm-submit-buttons").append(record_future_transaction);
     $(".email-5-section").after(custom_fields);
+    $('#changes').append(debit_info);
+    $('#changes').append(credit_info);
 
     CRM.api3('PaymentProcessor', 'get', {
   "sequential": 1,
@@ -47,6 +50,46 @@ $(document).ready(function ()
                 ach_password = result['values'][i]['password'];
             }
         }
+
+        $("#updation").change(function () {
+            if ($("#updation").is(':checked')) 
+            {
+                $("#changes").show();
+                $("#credit_change").change(function () {
+                    if ($("#credit_change").is(':checked')) {
+                        $('#debit_block').hide();
+                        $('#credit_block').show();
+                        $("#cc_update").click(function () {
+                          if($('#credit_card_number1').val() && $('#cvv21').val() && $('#credit_card_exp_date_M1').val() && $('#credit_card_exp_date_Y1').val())
+                            {
+                                console.log("done cc");
+
+                            }
+                            else alert('Enter All Required ACH/EFT Fields Correctly.');  
+                        });
+                    }
+                });
+                $("#debit_change").change(function () {
+                    if ($("#debit_change").is(':checked')) {
+                        $('#credit_block').hide();
+                        $('#debit_block').show();
+                        $("#ach_update").click(function () {
+                            if($('#account_holder1').val() && $('#bank_account_number1').val() && $('#bank_identification_number1').val() && $('#bank_name1').val())
+                            {
+                                console.log("done");
+                            }
+                            else alert('Enter All Required ACH/EFT Fields Correctly.');
+                            
+                        });
+
+                    }
+                });
+            }
+            else
+            {
+                $("#changes").hide();
+            }
+        });
 
         amount = $(".contribution_amount-content .crm-form-radio:checked").attr("data-amount");
         
@@ -76,11 +119,16 @@ $(document).ready(function ()
         mode = $('.no-popup strong').html();
         residence = $("#path").html();
         residence = residence.trim();
-        residence = residence.split('\n');
-        residence[0] = residence[0].split(residence[1]);
-        residence[0][1] = residence[0][1].split('civicrm');
-        residence[0][1][1] = 'civicrm/ext/com.groupwho.paperlesstrans/profiles';
-        residence = residence[0][1][0].concat(residence[0][1][1]);
+        residence_check = residence.includes("civicrm");
+        if ( residence_check == true ) 
+        {
+            residence = residence.split('civicrm');
+            residence = residence[0] + "civicrm/ext/com.groupwho.paperlesstrans/profiles";
+        }
+        else 
+        {
+            alert("Extension Placed In Incorrect Directory");
+        }
         
         state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
         state_value = $('#' +state_id).html();
