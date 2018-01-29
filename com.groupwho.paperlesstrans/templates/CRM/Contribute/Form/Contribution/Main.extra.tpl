@@ -2,6 +2,8 @@
     {php}
     $dir = dirname(__FILE__);
     echo $dir;
+    echo "\n";
+    echo $_SERVER['DOCUMENT_ROOT'];
     {/php}
 </div>
 {literal}
@@ -119,16 +121,12 @@ $(document).ready(function ()
         mode = $('.no-popup strong').html();
         residence = $("#path").html();
         residence = residence.trim();
-        residence_check = residence.includes("civicrm");
-        if ( residence_check == true ) 
-        {
-            residence = residence.split('civicrm');
-            residence = residence[0] + "civicrm/ext/com.groupwho.paperlesstrans/profiles";
-        }
-        else 
-        {
-            alert("Extension Placed In Incorrect Directory");
-        }
+        residence = residence.split('\n');
+        residence[0] = residence[0].split(residence[1]);
+        residence[0][1] = residence[0][1].split('civicrm');
+        residence[0][1][1] = 'civicrm/ext/com.groupwho.paperlesstrans/profiles';
+        residence = residence[0][1][0].concat(residence[0][1][1]);
+        console.log(residence);
         
         state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
         state_value = $('#' +state_id).html();
